@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+
+
+<body>
+
+
+    <div id="menu">
+        <ul></ul>
+        <input placeholder="Digite o nome do github">
+        <button>Verificar</button>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        
+        var input = document.querySelector('#menu input');
+        var btn = document.querySelector('#menu button');
+        var lista = document.querySelector('#menu ul');
+
+        btn.onclick = function(){
+            axios.get('https://api.github.com/users/'+ input.value + '/repos')
+            .then(function(response){
+                for(repositorio of response.data){
+                    // ira percer o vetor atual e pegar o nome do repositorio e pra cada um, criar um <li>
+                    var repositorie = document.createTextNode(repositorio.name);
+                    var createLi = document.createElement('li')
+
+                    // ira pegar a variavel li e passar o valor do nome do repositorio
+                    createLi.appendChild(repositorie);
+                    // pega a lista atribuida na div e passa o valor do li para retorno.
+                    lista.appendChild(createLi);
+                    
+                }
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+            
+        }
+
+
+    </script>
+</body>
+
+</html>

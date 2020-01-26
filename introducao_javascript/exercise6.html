@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function verificaIdade(idade){
+            return new Promise(function(resolve, reject){
+                if(idade <=17){
+                    reject('Menor de idade!');
+                }else{
+                    resolve('Maior de idade!');
+                }
+            });
+        }
+
+        verificaIdade(17)
+        .then(function(){
+            setTimeout(function(){console.log('Maior que 18')}, 3000);
+        })
+        .catch(function(){
+            setTimeout(function(){console.log('Menor que 18')}, 3000)
+        });
+
+    </script>
+</body>
+
+</html>
