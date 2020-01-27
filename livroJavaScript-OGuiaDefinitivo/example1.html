@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        var book = {                // Objetos são colocados entre chaves.
+            topic: "JavaScript",    // A propriedade "topic" tem o valor "JavaScript".
+            fat: true               // A propriedade "fat" tem o valor true.
+        };                          // A chave marca o fim do objeto.
+                                    // Acesse as propriedades de um objeto com . ou []:
+        book.topic                  // => "JavaScript"
+        book["fat"]                 // => true: outro modo de acessar valores de propriedade.
+        book.author = "Flanagan";   // Crie novas propriedades por meio de atribuição.
+        book.contents = {
+            module1: 'Topico 1',
+            module2: 'Topico 2',
+        };
+
+        console.log(book.author);
+        console.log(book.contents.module1);
+
+    </script>
+</body>
+
+</html>
