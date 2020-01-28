@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function changeMonetaryCode(code, value){
+            return document.writeln(value.toLocaleString('pt-BR', { style : 'currency', currency: `${code}` }).replace(',', '.'));
+        }
+
+        var valorUniversal = Number.parseFloat(window.prompt('Type the value of anything and we will show u in different monetary code'));
+        var nome = window.prompt('Type ur name');
+
+        changeMonetaryCode('BRL', valorUniversal);
+        changeMonetaryCode('EUR', valorUniversal);
+        changeMonetaryCode('USD', valorUniversal);
+
+        document.write(nome.toUpperCase());
+        document.write(nome.toLowerCase());
+        
+
+    </script>
+
+</body>
+
+</html>
