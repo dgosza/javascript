@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var nome = window.prompt('Digite seu nome');
+        var salario = window.prompt('Digite seu salario');
+        var sexo = window.prompt('Digite seu sexo - M ou F');
+
+        if (salario >= 1200) {
+            document.write('Voce Ganha na media dos brasileiros!')
+            document.write(`${salario}`)
+            if (sexo != 'M') {
+                document.write('muie')
+                document.write('parabens')
+            } else {
+                document.write('homi')
+                document.write('parabainssss')
+            }
+        } else if (salario >= 3000) {
+            document.write('Voce ganha acima da media dos brasileiros!')
+            document.write(`${salario}`)
+            if (sexo != 'M') {
+                document.write('muie')
+            } else {
+                document.write('homi')
+            }
+        } else {
+            document.write('Voce ganha muito acima da media dos brasileiros')
+            document.write(`${salario}`)
+            if (sexo != 'M') {
+                document.write('muie')
+            } else {
+                document.write('homi')
+            }
+        }
+
+        function teste(){
+            return sexo != 'M' ? 'muieeeee' : 'homiiii';
+        }
+
+        document.write(teste());
+
+    </script>
+
+</body>
+
+</html>
