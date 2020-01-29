@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise DOM</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <style>
+    
+        body{
+            background-color:#fafafa; 
+        }
+
+        #lista{
+            width:155px;
+            background-color: teal;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="row container">
+        <div class="col s12 l12">
+            <h1 class="flow-text">Exercicio com DOM - Javascript</h1>
+
+            <div class="col s12 l6 red" id="divone">
+                <h5>Title 1</h5>
+                <p class="flow-text" id="texto">texto texto texto texto texto texto </p>
+                <ul id="lista"></ul>
+            </div>
+            <div class="col s12 l6 brown" id="divtwo">
+                <h5>Title 2</h5>
+                <p class="flow-text">texto texto texto texto texto texto </p>
+            </div>
+            <div class="col s12 l12"><br><br><div class="divider"></div></div>
+        </div>
+
+
+
+
+        <div class="col s12 l12">
+            <h1 class="flow-text">Teste de Button</h1>
+            <ul id="listaTeste">
+                <span class="flow-text">Lista Abaixo</span>
+                
+            </ul>
+            <a class="btn">Add</a>
+        </div>
+    </div>
+
+    <script>
+        var onlyDiv = document.querySelector('#divone');
+        var textoOne = document.querySelector('#divone #texto');
+        var lista = document.querySelector('#divone #lista');
+        var insideLista = document.createElement('ul');
+        var divtwo = document.querySelector('#divtwo')
+
+        onlyDiv.onmouseover = function(){
+            textoOne.style.color = 'white';
+            textoOne.style.fontSize = '30px';
+            document.getElementById('divtwo').setAttribute('class', 'red');
+        }
+
+        onlyDiv.onmouseout = function(){
+            textoOne.style.color = 'black';
+            textoOne.style.fontSize = '25px';
+            document.getElementById('divtwo').setAttribute('class', 'brown');
+
+
+        }
+
+        console.log('FUNCIONOU! :)')
+      
+        
+
+    </script>
+
+    <script>
+        var outralista = document.querySelector('div #listaTeste');
+        var buttonClick = document.querySelector('div a');
+        
+        buttonClick.onclick = function(){
+            var item = document.createElement('li');
+            var textoItem = document.createTextNode('Item Adicionado! Clique para visualizar => ')
+            var icon = document.createElement('i')
+            var iconName = document.createTextNode('book')
+            var iconName1 = document.createTextNode('add_a_photo')
+            icon.setAttribute('class', 'material-icons')
+            
+            icon.appendChild(iconName);
+            icon.appendChild(iconName1);
+            outralista.appendChild(item);
+            outralista.appendChild(textoItem)
+            outralista.appendChild(icon)       
+
+            console.log('Fui clicado!');
+        }
+    </script>
+</body>
+</html>
