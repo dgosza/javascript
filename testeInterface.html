@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .linkIcon:hover {
+            color: #af2405;
+        }
+
+        .linha:hover {}
+    </style>
+</head>
+
+<body>
+
+    <div class="row container ">
+        <div class="col s12 l12 ">
+            <h1 class="flow-text">Interface</h1>
+            <div class="divider"></div>
+
+            <ul id="tabs-swipe-demo" class="tabs">
+                <li class="tab col s3"><a href="#test-swipe-1">option 1</a></li>
+                <li class="tab col s3"><a class="active" href="#test-swipe-2">option 2</a></li>
+                <li class="tab col s3"><a href="#test-swipe-3">option 3</a></li>
+            </ul>
+            <div id="test-swipe-1" class="col s12">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Professor</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Alvin</td>
+                            <td>Eclair</td>
+                            <td class="linkIcon"><a href="#modalExemplo1" style="color:inherit" class="modal-trigger">
+                                    <i class="material-icons" title="Ver Perfil">person</i> </a></td>
+                        </tr>
+                        <tr>
+                            <td>Alan</td>
+                            <td>Jellybean</td>
+                            <td class="linkIcon"><a href="#modalExemplo1" style="color:inherit" class="modal-trigger">
+                                    <i class="material-icons" title="Ver Perfil">person</i> </a></td>
+
+                        </tr>
+                        <tr>
+                            <td>Jonathan</td>
+                            <td>Lollipop</td>
+                            <td class="linkIcon"><a href="#modalExemplo1" style="color:inherit" class="modal-trigger">
+                                    <i class="material-icons" title="Ver Perfil">person</i> </a></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Modal Trigger -->
+
+                <!-- Modal Structure -->
+                <div id="modalExemplo1" class="modal bottom-sheet">
+                    <div class="modal-content" style="height: 500px;">
+                        <h2 class="flow-text">Cadastro de Fulano...</h4>
+                            <form class="col s12 l12">
+                                <div class="input-field col s6">
+                                    <input placeholder="Ex: Ronaldo, Diego, Angela..." id="nomefunc" type="text"
+                                        class="validate">
+                                    <label for="nomefunc">Nome do Funcionário</label>
+                                </div>
+
+                                <div class="input-field col s6">
+                                    <input placeholder="Ex: Souza, Silva..." id="sobrenome" type="text"
+                                        class="validate">
+                                    <label for="sobrenome">Sobrenome</label>
+                                </div>
+
+                                <div class="input-field col s6">
+                                    <input placeholder="Ex: Analista, Recepcionista..." id="cargo" type="text"
+                                        class="validate">
+                                    <label for="cargo">Cargo</label>
+                                </div>
+
+                                <div class="col s12 l12">
+                                    <a class="waves-effect waves-light btn modal-trigger right" href="#modalCadastro"
+                                        style="background-color: #af2405;">cadastrar</a>
+                                </div>
+
+                                <div id="modalCadastro" class="modal">
+                                    <div class="modal-content">
+                                        <h4 class="flow-text center">Colaborador Cadastrado!</h4>
+                                        <p class="center">Clique em "SAIR" para voltar a página principal.</p>
+
+                                    </div>
+
+                                </div>
+
+                            </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div id="test-swipe-2" class="col s12">
+                <table class="highlight">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Professor</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="linha">
+                            <td><a href="#ExemploDoisAluno" class="modal-trigger"> Alvin </a></td>
+                            <td><a href="#ExemploDoisProfessor" class="modal-trigger"> Eclair </a></td>
+                            <td>
+                                <i class="material-icons" title="Ver Perfil">person</i> </td>
+                        </tr>
+                        <tr class="linha">
+                            <td>Alan</td>
+                            <td>Jellybean</td>
+                            <td>
+                                <i class="material-icons" title="Ver Perfil">person</i> </td>
+                        </tr>
+                        <tr class="linha">
+                            <td>Jonathan</td>
+                            <td>Lollipop</td>
+                            <td>
+                                <i class="material-icons" title="Ver Perfil">person</i></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="ExemploDoisAluno" class="modal">
+                    <div class="modal-content" style="height: 400px;">
+                        <h4>Editar Aluno</h4>
+                        <form class="col s12 l12">
+                            <div class="input-field col s6">
+                                <input placeholder="Ex: Ronaldo, Diego, Angela..." id="nomefunc" type="text" class="validate">
+                                <label for="nomefunc">Nome do Funcionário</label>
+                            </div>
+        
+                            <div class="input-field col s6">
+                                <input placeholder="Ex: Souza, Silva..." id="sobrenome" type="text" class="validate">
+                                <label for="sobrenome">Sobrenome</label>
+                            </div>
+        
+                            <div class="input-field col s6">
+                                <input placeholder="Ex: Analista, Recepcionista..." id="cargo" type="text" class="validate">
+                                <label for="cargo">Cargo</label>
+                            </div>
+        
+        
+                            <div id="modalCadastro" class="modal">
+                                <div class="modal-content">
+                                    <h4 class="flow-text center">Colaborador Cadastrado!</h4>
+                                    <p class="center">Clique em "SAIR" para voltar a página principal.</p>
+        
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"
+                                        onclick="{redirect()}">sair</a>
+                                </div>
+                            </div>
+        
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="waves-effect waves-light btn modal-trigger right" href="#modalCadastro" style="background-color: #af2405;">cadastrar</a>
+                    </div>
+                </div>
+
+                <div id="ExemploDoisProfessor" class="modal">
+                    <div class="modal-content"style="height: 400px;">
+                        <h4>Editar Professor</h4>
+                        <form class="col s12 l12">
+                            <div class="input-field col s6">
+                                <input placeholder="Ex: Ronaldo, Diego, Angela..." id="nomefunc" type="text" class="validate">
+                                <label for="nomefunc">Nome do Funcionário</label>
+                            </div>
+        
+                            <div class="input-field col s6">
+                                <input placeholder="Ex: Souza, Silva..." id="sobrenome" type="text" class="validate">
+                                <label for="sobrenome">Sobrenome</label>
+                            </div>
+        
+                            <div class="input-field col s6">
+                                <input placeholder="Ex: Analista, Recepcionista..." id="cargo" type="text" class="validate">
+                                <label for="cargo">Cargo</label>
+                            </div>
+        
+                            <div class="col s12 l12">
+                            </div>
+        
+                            <div id="modalCadastro" class="modal">
+                                <div class="modal-content">
+                                    <h4 class="flow-text center">Colaborador Cadastrado!</h4>
+                                    <p class="center">Clique em "SAIR" para voltar a página principal.</p>
+        
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"
+                                        onclick="{redirect()}">sair</a>
+                                </div>
+                            </div>
+        
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="waves-effect waves-light btn modal-trigger right" href="#modalCadastro" style="background-color: #af2405;">cadastrar</a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div id="test-swipe-3" class="col s12">
+
+                <table class="highlight">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Professor</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="linha">
+                            <td><a href="#ExemploDoisAluno" class="modal-trigger"> Alvin </a></td>
+                            <td><a href="#ExemploDoisProfessor" class="modal-trigger"> Eclair </a></td>
+                            <td>
+                                <i class="material-icons" title="Ver Perfil">person</i> </td>
+                        </tr>
+                        <tr class="linha">
+                            <td>Alan</td>
+                            <td>Jellybean</td>
+                            <td>
+                                <i class="material-icons" title="Ver Perfil">person</i> </td>
+                        </tr>
+                        <tr class="linha">
+                            <td>Jonathan</td>
+                            <td>Lollipop</td>
+                            <td>
+                                <i class="material-icons" title="Ver Perfil">person</i></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="col s12 l12" style="background-color: #af2405;">
+                    <a class="waves-effect waves-light btn right">excluir</a>
+                    <a class="waves-effect waves-light btn right">editar</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal();
+        });
+
+    </script>
+</body>
+
+</html>
