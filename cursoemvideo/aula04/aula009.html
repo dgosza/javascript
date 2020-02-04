@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Verificador de Paises!</h1>
+    Pais: <input type="text" name="pais" id="pais">
+    <button id="btn">Verificar</button>
+
+    <div id="verifica">Voce eh Brasileiro? <span id="get">(?)</span></div>
+    
+    <script>
+        var inputPais = document.getElementById('pais');
+        var btnClick = document.getElementById('btn');
+        var texto = document.getElementById('get');
+
+        btnClick.onclick = function(){
+            if(inputPais.value == 'EUA'){
+                texto.innerHTML = 'Não! im Estrangeiro hehe!!';
+            }else{
+                texto.innerHTML = 'Sim!!!';
+            }
+        }
+    </script>
+</body>
+
+</html>

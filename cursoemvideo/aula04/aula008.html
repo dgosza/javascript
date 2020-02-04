@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DETRAN</title>
+</head>
+
+<body>
+
+    <h1>Multas DETRAN</h1>
+    Velocidade do Carro: <input type="number" name="txtvel" id="txtvel">
+    <input type="button" value="Enviar" id="btn">
+    <div id="resultado"></div>
+
+
+
+    <script>
+        var btn = document.getElementById('btn');
+        var velocidade = document.getElementById('txtvel')
+        var resultado = document.getElementById('resultado')
+
+        btn.onclick = function(){
+            resultado.innerHTML = `<p>sua velocidade eh de <strong>${velocidade.value}</strong></p>`
+            if(velocidade.value >= 50){
+                resultado.innerHTML += 'Voce ltrapassou a velocidade de 50km/p!';
+                resultado.innerHTML += '<strong>Multado!</strong>';
+            }else{
+                resultado.innerHTML += 'Voce esta de acordo com a lei!';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
