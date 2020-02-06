@@ -22,7 +22,6 @@
 
         #centro {
             width: 600px;
-            height: 200px;
             background-color: white;
             border-radius: 10px;
             margin: auto;
@@ -33,14 +32,20 @@
         #formulario {
             padding: 20px
         }
-        radio, input{
-            margin:8px
+
+        radio,
+        input {
+            margin: 8px
         }
 
-        button{
+        button {
             margin-top: 20px;
+
         }
 
+        footer {
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -52,18 +57,90 @@
 
         <div id="formulario">
             Ano de Nasc: <input type="text" name="nasc" id="nasc"><br>
-            Sexo: <input type="radio" name="masc" id="masc">Masculino<input type="radio" name="fem" id="fem">Feminino<br>
+            Sexo: <input type="radio" name="sexo" value="masc">Masculino
+            <input type="radio" name="sexo" value="fem">Feminino<br>
 
             <button id="btnVerifica">Verificar</button>
-            <p>Preencha todos os dados acima para ver o resultado!</p>
+            <br>
+            <div id="resultado">
+                <p id="textResultado">Preencha todos os dados acima para ver o resultado!</p>
+                <img id="imgAvatar">
+            </div>
         </div>
-
+        <footer>
+            <h4>Diego Souza</h4>
+        </footer>
     </div>
 
 
 
     <script>
 
+        var year = document.getElementById('nasc');
+        var currentYear = new Date().getFullYear();
+        var btnClicked = document.getElementById('btnVerifica');
+        var resultadoDiv = document.getElementById('resultado');
+        var sexOption = document.getElementsByName('sexo');
+        var genero;
+
+        function verifica() {
+            if (year.value == '' || Number(year.value) > currentYear || Number(year.value) <= 0) {
+                alert('Erro! Verifique os campos')
+            } else {
+                var yearFormated = Number(year.value);
+                var oldyear = currentYear - yearFormated;
+                var p = document.getElementById('textResultado');
+                var img = document.getElementById('imgAvatar');
+
+                if (sexOption[0].checked) {
+                    genero = 'Homem';
+                    if (oldyear >= 0 && oldyear <= 5) {
+                        img.src = 'data:image/jpeg;base64,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';
+                    } else if (oldyear >= 6 && oldyear <= 13) {
+                        img.src = 'https://i.pinimg.com/originals/b5/d6/08/b5d608a5d00f2c0e066aec029f086b8b.jpg';
+                    } else if (oldyear >= 14 && oldyear <= 18) {
+                        img.src = 'https://thumbs.dreamstime.com/z/modelagem-adolescente-masculina-15750248.jpg';
+                    } else if (oldyear >= 19 && oldyear <= 30) {
+                        img.src = 'https://thumbs.dreamstime.com/z/o-homem-moreno-adulto-masculino-mostra-o-gesto-do-sinal-com-ambas-as-m%C3%A3os-t%C3%A3o-sobre-40416823.jpg';
+                    } else if (oldyear >= 31 && oldyear <= 60) {
+                        img.src = 'https://blog.shop4men.com.br/wp-content/uploads/2017/12/homem-barbudo-1400x800-0817.jpg';
+                    } else if (oldyear >= 61) {
+                        img.src = 'https://get.pxhere.com/photo/man-person-people-photography-male-portrait-green-smile-senior-citizen-face-men-photograph-expression-facial-hair-873678.jpg';
+                    }
+
+                } else if (sexOption[1].checked) {
+                    genero = 'Mulher';
+                    if (oldyear >= 0 && oldyear <= 5) {
+                        img.src = 'https://img.elo7.com.br/product/zoom/12FF942/kit-kylin-com-meio-torso-sexo-feminino-bebe-reborn-com-sexo-feminino.jpg';
+                    } else if (oldyear >= 6 && oldyear <= 13) {
+                        img.src = 'http://www.melhorsaber.com/wp-content/uploads/2017/05/cortes-de-cabelo-para-criancas-moda-2018-300x336.jpg';
+                    } else if (oldyear >= 14 && oldyear <= 18) {
+                        img.src = 'http://www.gadoo.com.br/wp-content/uploads/2015/05/2248.jpg';
+                    } else if (oldyear >= 19 && oldyear <= 30) {
+                        img.src = 'https://image.freepik.com/fotos-gratis/um-atraente-mulher-jovem-olhando-camera_23-2148028843.jpg';
+                    } else if (oldyear >= 31 && oldyear <= 60) {
+                        img.src = 'https://static1.dermaclub.com.br/articles/7/61/17/@/12877-as-lesoes-de-acne-na-pele-da-mulher-adul-article_image-1.jpg';
+                    } else if (oldyear >= 61) {
+                        img.src = 'http://www.bioanalise.com.br/blog/wp-content/uploads/2017/04/saude-da-idosa-825x420.png';
+                    }
+                }
+
+                p.style.textAlign = 'center'
+                p.innerText = `Detectamos ${genero} com ${oldyear} anos.`
+
+                img.style.borderRadius = '50%';
+                img.style.marginLeft = '30%';
+                img.style.marginRight = '';
+                img.width = '200';
+                img.height = '200';
+
+
+
+
+            }
+        }
+
+        btnClicked.addEventListener('click', verifica)
 
 
     </script>
