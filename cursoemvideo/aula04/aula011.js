@@ -26,5 +26,6 @@ switch (day) {
         break;
     default:
         console.log('error 440')
+        console.log('specify correctly the day.')
         break
 }
