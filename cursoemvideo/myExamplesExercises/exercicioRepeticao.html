@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            margin: auto;
+            color: cornsilk;
+            text-align: center;
+            margin-top: 20px;
+
+        }
+
+        #centro {
+            width: 600px;
+            background-color: white;
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: 5px 10px 18px #888888;
+        }
+
+        #formulario {
+            padding: 20px
+        }
+
+        radio,
+        input {
+            margin: 8px
+        }
+
+        button {
+            margin-top: 20px;
+
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Vamos Contar</h1>
+    <div id="centro">
+
+        <div id="formulario">
+            Inicio: <input type="text" name="nasc" id="inicio"><br>
+            Fim: <input type="text" name="nasc" id="fim"><br>
+            Passo: <input type="text" name="nasc" id="passo"><br>
+
+            <button id="btnVerifica">Verificar</button>
+            <br>
+            <div id="resultado">
+                <div id="textResultado"><br>Preparando contagem...</p>
+                </div>
+            </div>
+            <footer>
+                <h4>Diego Souza</h4>
+            </footer>
+        </div>
+
+
+
+        <script>
+
+            var inicio = document.getElementById('inicio');
+            var fim = document.getElementById('fim');
+            var passo = document.getElementById('passo');
+            var btnClicked = document.getElementById('btnVerifica');
+            var textResultado = document.getElementById('textResultado');
+
+
+            function fazConta() {
+                var i = Number(inicio.value)
+                var end = Number(fim.value)
+                var skip = Number(passo.value)
+                var texto = [];
+                var p = document.createElement('p')
+                textResultado.innerText = 'Contando:';
+
+                for (i; i <= end; i += skip) {
+                    texto.push(` 👉 ${i}`);
+                }
+                texto.push('🏎️');
+                var textoString = String(texto);
+                textoString = textoString.replace(/,/g, ' ');
+                textResultado.appendChild(p)
+                p.innerText = textoString
+            }
+
+            function verifica() {
+                if (inicio.value == '' || fim.value == '' || passo.value == '') {
+                    textResultado.innerText = 'Preencha os campos!'
+                } else if (passo.value == 0) {
+                    alert('Não pode ser igual a 0!.  Atribuido o valor 1 ao mesmo.')
+                    passo.value = 1;
+                    fazConta();
+                } else {
+                    fazConta();
+                }
+            }
+
+            btnClicked.addEventListener('click', verifica)
+
+        </script>
+</body>
+
+</html>
