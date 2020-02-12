@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            margin: auto;
+            color: cornsilk;
+            text-align: center;
+            margin-top: 20px;
+
+        }
+
+        #centro {
+            width: 600px;
+            background-color: white;
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: 5px 10px 18px #888888;
+        }
+
+        #formulario {
+            padding: 20px
+        }
+
+        radio,
+        input {
+            margin: 8px
+        }
+
+        button {
+            margin-top: 20px;
+
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Tabuada</h1>
+    <div id="centro">
+
+        <div id="formulario">
+            Numero: <input type="text" name="nasc" id="number">
+            <button id="btnVerifica">Verificar</button>
+
+            <div id="resultado">
+
+            </div>
+            <footer>
+                <h4>Diego Souza</h4>
+            </footer>
+        </div>
+
+
+
+        <script>
+
+            var number = document.getElementById('number');
+            var btnClicked = document.getElementById('btnVerifica')
+            var result = document.getElementById('resultado');
+
+            function geraTabuada() {
+                if (number.value == '' || number.value <0) {
+                    alert('Certifique-se que voce digitou um numero maior que 0!')
+                } else {
+                    result.innerHTML = ''
+                    for (var i = 0; i <= 10; i++) {
+                        var multi = i * number.value
+                        var criaLinha = document.createElement('p');
+                        criaLinha.innerHTML = number.value + '*' + i + ' = ' + multi
+                        result.appendChild(criaLinha)
+                    }
+                }
+            }
+
+            btnClicked.addEventListener('click', geraTabuada)
+
+        </script>
+</body>
+
+</html>
