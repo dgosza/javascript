@@ -59,9 +59,7 @@
             Numero: <input type="text" name="nasc" id="number">
             <button id="btnVerifica">Verificar</button>
 
-            <div id="resultado">
-
-            </div>
+            <div id="resultado"></div>
             <footer>
                 <h4>Diego Souza</h4>
             </footer>
@@ -76,7 +74,7 @@
             var result = document.getElementById('resultado');
 
             function geraTabuada() {
-                if (number.value == '' || number.value <0) {
+                if (number.value == '' || number.value < 0) {
                     alert('Certifique-se que voce digitou um numero maior que 0!')
                 } else {
                     result.innerHTML = ''
