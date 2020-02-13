@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            margin: auto;
+            color: cornsilk;
+            text-align: center;
+            margin-top: 20px;
+
+        }
+
+        #centro {
+            width: 600px;
+            background-color: white;
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: 5px 10px 18px #888888;
+        }
+
+        #formulario {
+            padding: 20px
+        }
+
+        radio,
+        input {
+            margin: 8px
+        }
+
+        button {
+            margin-top: 20px;
+
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Analisador de Numeros</h1>
+    <div id="centro">
+
+        <div id="formulario">
+            Numero(Entre 1 e 100): <input type="text" id="number">
+            <button id="btnVerifica">Adicionar</button>
+            <button id="done">Fazer verificação</button>
+
+            <div id="resultado"></div>
+            <div id="relatorio"></div>
+
+            <footer>
+                <h4>Diego Souza</h4>
+            </footer>
+        </div>
+
+
+
+        <script>
+
+            var number = document.getElementById('number');
+            var btnClicked = document.getElementById('btnVerifica')
+            var done = document.getElementById('done')
+            var result = document.getElementById('resultado');
+            var relatorio = document.getElementById('relatorio');
+            var numeros = [];
+
+
+            done.onclick = function relatorioNumeros() {
+                relatorio.innerText = '';
+                var numerosCadastrados = document.createElement('p')
+                var maiorValor = document.createElement('p')
+                var menorValor = document.createElement('p')
+                var somatoria = document.createElement('p')
+                var media = document.createElement('p')
+
+                var nCadastrados;
+                var maValor = 0;
+                var meValor = 0;
+                var soma = 0;
+                var mediaTotal = 0;
+
+                nCadastrados = numeros.length;
+                for (var num of numeros) {
+                    meValor = num
+                    soma += num;
+                }
+                mediaTotal = soma / nCadastrados;
+                maValor = Math.max(...numeros)
+                meValor = Math.min(...numeros)
+
+                numerosCadastrados.innerText = `Ao todo, temos ${nCadastrados} numeros cadastrados`;
+                maiorValor.innerText = 'O maior valor informado foi ' + maValor;
+                menorValor.innerText = 'O menor valor informado foi ' + meValor;
+                somatoria.innerText = 'Somando todos os valores, temos ' + soma;
+                media.innerText = 'A media dos valores digitados eh ' + mediaTotal;
+
+                relatorio.appendChild(numerosCadastrados)
+                relatorio.appendChild(maiorValor)
+                relatorio.appendChild(menorValor)
+                relatorio.appendChild(somatoria)
+                relatorio.appendChild(media)
+
+            }
+
+
+            function verifica() {
+                relatorio.innerText = ''
+                if (number.value == '' || number.value <= 0) {
+                    alert('Verifique os campos! Numeros entre 1 - 100!');
+                } else {
+
+                    var hasnumber;
+                    for (var num of numeros) {
+                        if (Number(number.value) == num) {
+                            hasnumber = true;
+                        }
+                    }
+
+                    if (hasnumber) {
+                        alert('O numero ja se encontra no array! Escolha outro')
+                    } else {
+                        var createNumber = document.createElement('p');
+                        createNumber.innerText = Number(number.value);
+                        result.appendChild(createNumber);
+                        numeros.push(Number(number.value));
+
+                    }
+
+                }
+
+            }
+
+            btnClicked.addEventListener('click', verifica)
+
+        </script>
+</body>
+
+</html>
