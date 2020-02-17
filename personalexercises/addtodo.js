@@ -45,6 +45,27 @@ function criaElemento(inputId, iconParameter, textParamer) {
     M.toast({ html: msgAdicionado });
 }
 
-buttonDo.onclick = function () { criaElemento(document.getElementById('listDo'), 'details', inputDo.value); inputDo.value = '';  };
-buttonDoing.onclick = function () { criaElemento(document.getElementById('listDoing'), 'chat_bubble_outline', inputDoing.value); inputDoing.value = ''; };
-buttonDone.onclick = function () { criaElemento(document.getElementById('listDone'), 'check', inputDone.value), inputDone.value = '';};
+buttonDo.onclick = function () {
+    if (inputDo.value == '') {
+        alert('Preencha o campo Do!')
+    } else {
+        criaElemento(document.getElementById('listDo'), 'details', inputDo.value);
+        inputDo.value = '';
+    }
+};
+buttonDoing.onclick = function () {
+    if (inputDoing.value == '') {
+        alert('preencha o campo Doing!')
+    } else {
+        criaElemento(document.getElementById('listDoing'), 'chat_bubble_outline', inputDoing.value);
+        inputDoing.value = '';
+    }
+};
+buttonDone.onclick = function () {
+    if(inputDone.value == ''){
+        alert('preencha o campo Done!')
+    }else{
+        criaElemento(document.getElementById('listDone'), 'check', inputDone.value); 
+        inputDone.value = '';        
+    }
+ };
