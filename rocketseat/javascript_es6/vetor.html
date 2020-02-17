@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        const vetor = [1, 2, 3, 8, 9]
+
+        const newvetor = vetor.map(function (item) {
+            return item + 2;
+        });
+
+        console.log('Retorno valor do array + 2 '+newvetor)
+
+        const sum = vetor.reduce(function(total, next){
+            return total + next;
+        })
+
+        console.log('Soma total dos valores do array '+sum)
+
+        const filter = vetor.filter(function(item){ 
+            return item % 2 == 0; 
+        });
+
+        console.log(filter)
+
+        const find = vetor.find(function(item){ return item == 9 })
+        console.log(find)
+
+    </script>
+</body>
+
+</html>
