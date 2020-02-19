@@ -6,13 +6,25 @@
     <title>Document</title>
     <script>
 
-        // localStorage.setItem("canal", "CFBCursos")
+
+        if(typeof(Storage) != undefined){
+            if(localStorage.visitas){
+                localStorage.visitas = Number(localStorage.visitas)+1;
+            }else{
+                // localStorage.setItem("chave", "valor")
+                localStorage.visitas = 1;
+            }
+            document.write('Visitas no site: '+ localStorage.visitas)
+        }else{          
+            document.write('n suporta!')
+        }
+
+
         // localStorage.removeItem("canal")
 
-        // var storage = localStorage.getItem("canal");
-        var storage = localStorage.canal == undefined;
+        // var storage = localStorage.canal == undefined;
 
-        console.log(storage)
+
 
     </script>
 </head>
