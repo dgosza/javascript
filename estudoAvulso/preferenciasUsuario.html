@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Model</title>
+
+</head>
+
+<body>
+
+
+    <div class="row container">
+        <h1 class="flow-text">choose your movie preference<br><span style="font-size:15px">a small exercise to practice Local Storage on web</span></h1>
+
+        <div class="col s12 l12">
+            <div class="col s12 l3">
+                <label>
+                    <input name="movie" value="sci-fi" type="radio" onclick="recebeValue(this.value)" />
+                    <span>sci-fi</span>
+                </label>
+            </div>
+            <div class="col s12 l3">
+                <label>
+                    <input name="movie" value="scary" type="radio" onclick="recebeValue(this.value)"/>
+                    <span>scary</span>
+                </label>
+            </div>
+            <div class="col s12 l3">
+                <label>
+                    <input name="movie" value="adventure" type="radio" onclick="recebeValue(this.value)"/>
+                    <span>adventure</span>
+                </label>
+            </div>
+            <div class="col s12 l3">
+                <label>
+                    <input name="movie" value="thriller" type="radio" onclick="recebeValue(this.value)"/>
+                    <span>thriller</span>
+                </label>
+            </div>
+
+            <div class="col s12 l12"><br><br><div class="divider"><br><br></div></div>
+
+            <div class="col s12 l12 center">
+                <p>your move preference is <strong id="moviePreference"></strong></p>
+                <p id="texto"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+
+        var movieSpan = document.getElementById('moviePreference')
+        var p = document.getElementById('texto')
+
+        if(localStorage.movie != undefined){
+            movieSpan.innerText = localStorage.movie;
+            let texto = 'value of movie saved on local storage';
+            p.innerText = texto
+            p.appendChild(texto);
+        }
+
+        function recebeValue(movieChoosen){
+            movieSpan.innerText = movieChoosen
+            localStorage.setItem('movie', movieChoosen);
+            p.innerText = '';
+        }
+
+    </script>
+
+</body>
+
+</html>
