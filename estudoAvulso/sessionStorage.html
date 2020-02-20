@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Model</title>
+
+</head>
+
+<body>
+
+
+    <div class="row container">
+        <h1 class="flow-text">Session storage example</h1>
+
+        <div class="col s12 l12 ">
+            <input class=" col s5 left" type="text" id="nome" placeholder="nome">
+            <input class=" col s5 right" type="text" id="sobrenome" placeholder="sobrenome">
+        </div>
+        <a class="btn" href="page1SS.html" id="button">Ir para pagina</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+
+        var btn = document.getElementById('button').onclick = function () {
+            
+            sessionStorage.nome = document.getElementById('nome').value
+            sessionStorage.sobrenome = document.getElementById('sobrenome').value
+
+        }
+    </script>
+</body>
+
+</html>
