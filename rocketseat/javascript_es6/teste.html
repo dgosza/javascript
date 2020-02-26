@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+    const usuario = {
+        nome: 'diego',
+        idade: 19,
+        sobrenome: 'souza',
+        profissao: 'analista'
+    }
+
+    const usuario1 = {
+        nome: 'naathalia',
+        idade: 19,
+        sobrenome: 'souza',
+        profissao: 'jovem aprendiz'
+    }
+
+    const formataUsuario = (...object) =>{
+        const newuser = { ...object, empresa: 'teste' }
+        console.log(newuser)
+    }
+
+    formataUsuario(usuario)
+    formataUsuario(usuario1)
+
+    const newperson = { ...usuario, empresa: 'it commerce' }
+    console.log(newperson)
+
+    
+    
+    </script>
+
+</body>
+</html>

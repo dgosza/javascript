@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //REST
+        const usuario = {
+            nome: 'diego',
+            idade: 20,
+            empresa: 'it'
+        }
+
+        //desestrutura o objeto
+        const { nome, ...resto } = usuario;
+        console.log(nome)
+        console.log(resto)
+
+        const arr = [1, 2, 3, 4, 5, 6, 3, 2, 4, 53]
+
+        //desestrutura o array
+        const [a, b] = arr
+        console.log(a, b)
+
+        function soma(...params) {
+            return params.reduce((total, current) => total + current)
+        }
+
+        console.log(soma(1, 2, 3, 4, 5))
+
+
+        //SPREAD
+        const arr1 = [1, 2, 3]
+        const arr2 = [4, 5, 6]
+
+        // const newstring = [arr1, arr2].join()
+        // console.log(newstring)
+
+        const newarray = [...arr1, ...arr2];
+        console.log(newarray)
+
+
+        const usuario2 = { ...usuario, empresa: 'outra empresa' }
+        console.log(usuario2)
+
+
+        //Basicamente, o operador SPREAD concatena e o REST é usado para receber 
+        // valores dentro de uma funcao e trabalhar com as mesmas.
+
+
+    </script>
+
+</body>
+
+</html>
