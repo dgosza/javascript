@@ -1,0 +1,1 @@
+import ClasseUsuario, {idade as IdadeUsuario} from './functions';
