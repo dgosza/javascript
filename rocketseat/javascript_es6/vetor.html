@@ -12,25 +12,21 @@
 
     <script>
 
-        const vetor = [1, 2, 3, 8, 9]
+        const vetor = [1, 2, 3, 4, 5, 9] 
     
-        const newvetor = vetor.map(function (item) {
-            return item + 2;
-        });
-        console.log('Retorno valor do array + 2 '+newvetor)
+        //o MAP percorre cada valor do vetor.
+        const newvetor = vetor.map( item => item)
+        console.log('MAP: Cada Valor do Array + 1 =>'+newvetor)
 
-        const sum = vetor.reduce(function(total, next){
-            return total + next;
-        })
-        console.log('Soma total dos valores do array '+sum)
+        //o Reduce percore cada valor do array e recebe sempre 2 params, o acumulador e o indexAtual
+        const sum = vetor.reduce((totaValue, currentValue) => totaValue + currentValue);
+        console.log('REDUCE: Soma ou subtrai o valor atual do vetor e joga ao total dos valores do array '+sum)
 
-        const filter = vetor.filter(function(item){ 
-            return item % 2 == 0; 
-        });
-        console.log(filter)
+        const filter = vetor.filter(item => { item % 2 == 0 });
+        console.log(`FILTER: filtra os valores que sao divisiveis por 2 e sao igual a 0: ${filter}`)
 
         const find = vetor.find(function(item){ return item == 9 })
-        console.log(find)
+        console.log(`FIND: acha um especifico valor no vetor: ${find}`)
 
     </script>
 </body>

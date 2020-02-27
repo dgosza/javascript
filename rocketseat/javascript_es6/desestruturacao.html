@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const user = {
+            name: 'diego',
+            idade: 12,
+            endereco :{
+                cidade: 'sp',
+                cep: 212324,
+                numero: 12,
+            },
+            casas:{
+                orlando:{
+                    quarto: 1,
+                    sala: 2,
+                    banheiros:2
+                },
+                dubai:{
+                    quarto: 4,
+                    sala: 9,
+                    banheiros:1
+                }
+            }
+        }
+
+        //declarando uma const as propriedades desejadas do objeto que esta recebendo 
+        const { name, idade, endereco: {cep}, casas: {orlando:{quarto}} } = user
+        console.log(name, idade, cep, quarto)
+
+        //recebendo um objeto
+        var mostrauser = ({name, idade}) => console.log(name, idade);
+        mostrauser(user)
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
