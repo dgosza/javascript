@@ -1,0 +1,1 @@
+oi! eu sou o arquivo um usado para o exemplo de callback, promises e aync await
