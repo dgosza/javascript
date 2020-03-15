@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const setCoordLocalStorage = (latitude, longitude) => {
+            localStorage.setItem('latitude', latitude)
+            localStorage.setItem('longitude', longitude)
+        }
+
+        navigator.geolocation.getCurrentPosition((position) => {
+            //user granted permission
+            const latitude = position.coords.latitude
+            const longitude = position.coords.longitude
+
+            if (localStorage.latitude == undefined || localStorage.longitude == undefined) {
+                setCoordLocalStorage(latitude, longitude)
+                console.log('entrou setlocal')
+            }
+
+            if(localStorage.latitude != latitude || localStorage.longitude != longitude){
+                console.log('entrou diferente')
+                console.log(localStorage.latitude + ' diferente de ' + latitude)
+                console.log(localStorage.longitude + ' diferente de ' + longitude)
+
+                localStorage.removeItem.latitude
+                localStorage.removeItem.longitude
+
+                setCoordLocalStorage(latitude, longitude)
+            }
+            
+            let key = '85fd1b4f64ade39ca9b0d5dee59c97ca';
+            fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`)
+                .then( (resp) => { return resp.json() })
+                .then( (data) => {
+                    console.log(data)
+                    console.log(Math.round(data.main.temp-273.15));
+                    console.log(data.name);
+                    var teste = data.weather[0].icon;
+                    console.log(teste)
+                })
+                .catch(function () {
+
+                })
+
+        }, () => {
+            //user denied permission
+            console.log('negado')
+        })
+
+    </script>
+</body>
+
+</html>
